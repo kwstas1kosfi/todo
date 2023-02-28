@@ -1,0 +1,45 @@
+<%= form_for([@client, note], html: { class: "col-6"}) do |f| %>
+  <% if note.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+  
+    <ul>
+      <% note.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="row">
+    <div class="col-12 px-0">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">
+            Call report for <strong><%= @note.client.name %></strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+  
+            <label class="col-form-label col-2 text-right">Date</label>
+            <div class="col-9">
+              <%= f.date_field :date, class: "form-control"  %>
+            </div>
+            <label class="col-form-label col-2 text-right">Description</label>
+            <div class="col-9">
+              <%= f.text_area :description, class: "form-control", rows: 7  %>
+            </div>
+            <label class="col-form-label col-2 text-right">Status</label>
+            <div class="col-9">
+              <%= f.select :status, ['pending','completed'], {}, class:"form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= f.submit class: "btn btn-primary" %>
+          <%= link_to 'Back', :back, class: "btn btn-secondary " %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>

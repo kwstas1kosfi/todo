@@ -1,0 +1,1 @@
+Ruby on rails it was something new for me. When i started to understand it and make it work it was great. You need some time to learn it becouse of it's potential to create your own "website". I think it is really good that you can create a checklist/to do list and design it the way you want it. It gives you so many features that it's never enough.
